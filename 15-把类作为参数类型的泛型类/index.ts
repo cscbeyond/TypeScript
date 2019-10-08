@@ -5,7 +5,7 @@ class User {
     password: string | undefined;
 }
 
-class MysqlDb {
+class MysqlDb1 {
     add(user: User): boolean {
 
         console.log(user);
@@ -17,7 +17,7 @@ var u = new User();
 u.username = '张三';
 u.password = '123456';
 
-var Db = new MysqlDb();
+var Db = new MysqlDb1();
 Db.add(u);
 */
 
@@ -28,7 +28,7 @@ class ArticleCate {
     status: number | undefined;
 }
 
-class MysqlDb {
+class MysqlDb1 {
     add(info: ArticleCate): boolean {
         console.log(info.title);
         return true;
@@ -40,17 +40,17 @@ a.title = '国内';
 a.desc = '国内新闻';
 a.status = 1;
 
-var Db = new MysqlDb();
+var Db = new MysqlDb1();
 Db.add(a);
 */
 
 
-// 以上两段代码：每使用一次MySqlDb，就得重新写一遍，导致代码重复
+// 以上两段代码：每使用一次MysqlDb1，就得重新写一遍，导致代码重复
 
 // 使用泛型 可以避免代码重复问题
 /*
 // 操作数据库的泛型类
-class MysqlDb<T>{
+class MysqlDb1<T>{
     add(info: T): boolean {
         console.log(info);
         return true;
@@ -69,7 +69,7 @@ var u = new User();
 u.username = '张三';
 u.password = '123456';
 
-var Db = new MysqlDb();
+var Db = new MysqlDb1();
 
 Db.add(u);
 
@@ -90,7 +90,7 @@ class ArticleCate {
         this.status = params.status;
     }
 }
-class MysqlDb<T>{
+class MysqlDb1<T>{
     add(info: T): boolean {
         console.log(info);
         return true;
@@ -107,7 +107,7 @@ class MysqlDb<T>{
 //     title: '分类',
 //     desc: '123'
 // });
-// var Db = new MysqlDb<ArticleCate>();
+// var Db = new MysqlDb1<ArticleCate>();
 // Db.add(a);
 
 //更新
@@ -116,5 +116,5 @@ var a = new ArticleCate({
     desc: '456'
 });
 a.status = 0;
-var Db = new MysqlDb<ArticleCate>();
+var Db = new MysqlDb1<ArticleCate>();
 Db.update(a, 12);

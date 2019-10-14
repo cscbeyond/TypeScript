@@ -3,7 +3,7 @@
     命名空间： 内部模块，主要用于组织代码，避免命名冲突
     模块：    ts的外部模块的简称，侧重代码的复用，一个模块里可能会有多个命名空间
 */
-import { A, B } from './modules/a';
+import { A, B } from './modules/animal';
 
 
 var d = new A.Dog('狼狗');

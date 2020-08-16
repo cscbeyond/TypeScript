@@ -15,7 +15,6 @@ function get(params: any) {
         target.apiUrl = 'xxxx';
         target.run = function () {
             console.log('run');
-
         }
     }
 }
